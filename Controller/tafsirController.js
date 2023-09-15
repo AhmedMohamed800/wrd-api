@@ -4,7 +4,7 @@ const cleaning = require("../Util/cleaning");
 
 async function tafsirCont(req, res) {
   const text = cleaning(req.params.text);
-  const tafsir_id = req.params.tafsir_id < 8 ? req.params.tafsir_id : 0;
+  const tafsir_id = req.params.tafsir_id <= 8 ? req.params.tafsir_id : 0;
 
   try {
     const [tafsir] = await pool.query(
